@@ -15,5 +15,30 @@ git init
 ```
 
 **1.2. Obtain and Prepare the E-Commerce Website Template:** 
-Instead of developing the website from scratch, I used a pre-existing e-commerce website template as the actual website is usually done by web/software developers. 
+Instead of developing the website from scratch, I used a pre-existing e-commerce website template as the actual website is usually done by web/software developers.
+
+**1.3 Download a Website Template:** Visit (Tooplate)[https://www.tooplate.com/] or any other free template resource. Look for templates that are ready to use and require minimal adjustments.
+
+**1.4 Prepare the Website Template:** Extract the downloaded template into your project directory, MarketPeak_Ecommerce
+
+**1.5 Stage and Commit the Template to Git:** I added the website files, setup Git configuration, and commit the changes to the MarketPeak_Ecommerce Git repository with the command
+
+```
+git add .
+git config --global user.name "YourUsername"
+git config --global user.email "youremail@example.com"
+git commit -m "Initial commit with basic e-commerce site structure"
+```
+
+
+
+
+## Getting Started
+
+To get started with the MarketPeak E-commerce project, follow these steps:
+
+1. **Clone the Repository**: Clone this repository to your local machine using the following command:
+   ```bash
+   git clone https://github.com/Aded0yin/MarketPeak_Ecommerce.git
+
 
