@@ -30,15 +30,65 @@ git config --global user.email "youremail@example.com"
 git commit -m "Initial commit with basic e-commerce site structure"
 ```
 
+**1.6 Create a remote Github repository:** I proceeded to create a repository on Github and named it Market_Peak_Ecommerce
+
+**1.7 Link Local Repository to Github:** On my terminal, i navigated to the project directory and cloned the remote repository URL to the local repository
+```
+git remote add origin https://github.com/Aded0yin/MarketPeak_Ecommerce.git
+```
+
+**1.7 Push the code to Github repository:** I pushed the code using the following command
+
+```
+git push -u origin main
+```
+
+## Step 2: AWS Deployment
+
+**Task 1: Setup an AWS EC2 instance for deployment**
+
+* I logged in to the AWS Management Console.
+* I launched an EC2 instance using an Amazon Linux AMI.
+* I connected to the instance using Https
+* I then proceeded to clone the Github repository to my AWS EC2 instance with the following command
+
+```
+git clone https://github.com/Aded0yin/MarketPeak_Ecommerce.git
+```
+
+** Installing a web server on EC2**
+
+Apache HTTP Server (httpd) is a widely used web server that serves HTML files over the internet. Installing it on Linux EC2 server will allow me to host the MarketPeak E-commerce site: Note that httpd is the software name for Apache on redhats systems using yum package manager
+
+I then proceeded to install Apache web server on my EC2 instance using the following commands
+
+```
+sudo yum update -y
+sudo yum install httpd -y
+sudo systemctl start httpd
+sudo systemctl enable httpd
+
+```
+
+- Prepare the web directory: I configured httpd for the website with the next command
+
+  ```
+  sudo rm -rf /var/www/html/*
+  sudo cp -r ~/MarketPeak_Ecommerce/2137_barista_cafe/* /var/www/html/
+
+  ```
+
+- Reload httpd: I applied changes by reloading the httpd service
+
+```
+sudo systemctl reload httpd
+
+```
+
+- Access Website from Browser: After i configured httpd and website files intact, i proceeded to open my web browser to access MarketPeak_Ecommerce with the public IP of my EC2 instance. I could not view the web page initially until i opened the port in the AWS security group.
 
 
+## Step 3: Continuous Integration and Deployment Workflow
 
-## Getting Started
-
-To get started with the MarketPeak E-commerce project, follow these steps:
-
-1. **Clone the Repository**: Clone this repository to your local machine using the following command:
-   ```bash
-   git clone https://github.com/Aded0yin/MarketPeak_Ecommerce.git
 
 
