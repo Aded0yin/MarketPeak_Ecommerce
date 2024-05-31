@@ -1,4 +1,4 @@
-## Capstone Project: E-commerce Platform Deployment with Git, Linux, and AWS
+# Capstone Project: E-commerce Platform Deployment with Git, Linux, and AWS
 
 **Project Instructions**
 
@@ -90,5 +90,24 @@ sudo systemctl reload httpd
 
 ## Step 3: Continuous Integration and Deployment Workflow
 
+To ensure a smooth workflow for developing, testing, and deploying my e-commerce platform, i created a seperate branch (Development branch).
 
+```
+git checkout -b development
+
+```
+
+**Implement Changes:** On the development branch, i added a new feature
+
+**Version control with Git:** I used the following git command to stage, commit, and push to the development branch
+
+```
+
+git add .
+
+git commit -m ""
+
+git push origin development
+
+```
 
