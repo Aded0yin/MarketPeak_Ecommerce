@@ -105,9 +105,45 @@ git checkout -b development
 
 git add .
 
-git commit -m ""
+git commit -m "Add new features or fix bugs"
 
 git push origin development
 
 ```
 
+**Pull Requests and Merge to the Main branch:** I created a pull request to merge the development branch into the main branch from my remote Github. I then reviewed the changes for any potential issues. Then i proceeded to merge the pull request into the main branch.
+
+```
+git checkout main
+git merge development
+```
+
+-  Push the Merged Changes to GitHub
+
+```
+git pull
+
+git push origin main
+```
+
+**Deploying Updates to the Production Server:** I pulled the latest changes on the server by opening my AWS EC2 instance where the production website is hosted, navigated to the website's directory and ran the following command
+
+```
+git pull origin main
+```
+
+- I restarted the web server to apply the changes
+
+```
+sudo rm -rf /var/www/html/*
+sudo cp -r ~/MarketPeak_Ecommerce/2137_barista_cafe/* /var/www/html/
+```
+
+```
+sudo systemctl reload httpd
+```
+
+**Testing the new changes:** I opened my web browser and pasted the public IP adderess of my EC2 instance to test the new features.
+
+
+- I learnt a lot from this project especially in the area of software development and deployment, branch management, and code review through pull requests.
